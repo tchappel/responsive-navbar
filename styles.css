@@ -367,20 +367,19 @@ template {
     width: 0;
 }
 
-.nav__checkbox-label {
+.nav__toggle-btn {
+    display: block;
     position: absolute;
     width: 50px;
-    /* must have same height of navbar*/
-    height: 50px;
     top: 0;
+    bottom: 0;
     right: 0;
     background-image: url('./menu_icon.png');
     background-position: center;
     background-size: cover;
-    cursor: pointer;
 }
 
-.nav__checkbox-label:hover {
+.nav__toggle-btn:hover {
     cursor: pointer;
 }
 
@@ -389,15 +388,15 @@ template {
     position: relative;
     background-color: rgba(0, 0, 0, .85);
     overflow-y: hidden;
-    /* offset top must be same as height of navbar*/
-    top: 50px;
+    top: 100%;
 }
 .nav__link {
     display: block;
     text-align: center;
 }
 
-.nav__links.open {
+.nav.open .nav__links {
+  /* 100vh - navbarHeight*/
     height: calc(100vh - 50px);
 }
 
@@ -408,7 +407,7 @@ template {
 
 /* this breakpoint must be same as variable navBreakpoint in javascript code*/
 @media (min-width:600px) {
-    .nav__checkbox-label {
+    .nav__toggle-btn {
         display: none;
     }
     .nav__links {
