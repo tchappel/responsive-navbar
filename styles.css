@@ -370,13 +370,19 @@ template {
 .nav__toggle-btn {
     display: block;
     position: absolute;
-    width: 50px;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-image: url('./menu_icon.png');
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    right: 8px;
+    background-image: url('menu.svg');
+    transform: translateY(-50%);
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nav.open .nav__toggle-btn {
+  background-image: url('close.svg');
 }
 
 .nav__toggle-btn:hover {
